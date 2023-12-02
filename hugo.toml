@@ -1,4 +1,4 @@
 baseURL = 'https://www.hilarymuludiang.com/'
 languageCode = 'en-us'
 title = 'Hilary Muludiang'
-theme = 'adritian-free-hugo-theme'
+theme = 'ananke'

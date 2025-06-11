@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilary L. Muludiang - DevOps Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .resume-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .contact {
+            font-size: 1.1em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1.0s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .job {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .job:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            color: #2c3e50;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #e74c3c;
+            font-weight: bold;
+            background: rgba(231, 76, 60, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .job ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .job li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.3);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 3px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-category li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ddd;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            box-shadow: 0 3px 10px rgba(232, 67, 147, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .job-header {
+                flex-direction: column;
+            }
+
+            .duration {
+                align-self: flex-start;
+                margin-top: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume-card">
+            <div class="header">
+                <h1>Hilary L. Muludiang</h1>
+                <div class="contact">
+                    <strong>DevOps Engineer & Systems Architect</strong><br>
+                    📧 hilary.muludiang@gmail.com
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="section">
+                    <h2>Professional Experience</h2>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Staff DevOps Engineer</div>
+                                <div class="company">Koalafi, Inc., Richmond VA</div>
+                            </div>
+                            <div class="duration">April 2021 - Present</div>
+                        </div>
+                        <ul>
+                            <li><span class="highlight">Sole contributor</span> working on green field initiatives and proof of concepts</li>
+                            <li>Deployed, maintained and upgraded <span class="highlight">AWS infrastructure</span> using Terraform</li>
+                            <li>Used <span class="highlight">infrastructure as code</span> methods to reduce deployment time, configuration drift, and increase repeatability</li>
+                            <li>Managed <span class="highlight">TICK and Grafana stacks</span> for observability of Kubernetes-hosted microservices</li>
+                            <li>Led migration of monolith services from .NET/Windows to <span class="highlight">microservices .NET in EKS</span></li>
+                            <li>Ran bi-weekly tech team meetings and weekly AWS cost management meetings</li>
+                            <li>Addressed security risks from 3rd party assessments and mentored junior engineers</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Senior DevOps Engineer</div>
+                                <div class="company">AWeber, Inc., Chalfont, PA</div>
+                            </div>
+                            <div class="duration">October 2017 - April 2021</div>
+                        </div>
+                        <ul>
+                            <li>Provided operations support for Integrations team applications</li>
+                            <li>Managed virtual environments and created <span class="highlight">Chef cookbooks, Puppet manifests</span></li>
+                            <li>Migrated services to <span class="highlight">on-premise Kubernetes</span></li>
+                            <li>Built <span class="highlight">Grafana dashboards</span> for application performance monitoring</li>
+                            <li>Led containerization efforts for microservices architecture transition</li>
+                            <li>Utilized <span class="highlight">GitLab for CI/CD pipeline automation</span></li>
+                            <li>Wrote Python services and maintained existing codebase</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">DevOps Engineering Consultant</div>
+                                <div class="company">Addteq, Inc., Princeton, NJ</div>
+                            </div>
+                            <div class="duration">January 2017 - September 2018</div>
+                        </div>
+                        <ul>
+                            <li>Technical lead for clients' automation initiatives</li>
+                            <li>Architected new environments and deployed <span class="highlight">Atlassian product line</span></li>
+                            <li>Implemented <span class="highlight">CI/CD pipelines</span> and performed load testing with JMeter</li>
+                            <li>Deployed Puppet for internal system management</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">System Consultant</div>
+                                <div class="company">Versatile Technical Services, Inc., Harrisburg, PA</div>
+                            </div>
+                            <div class="duration">February 2011 - December 2016</div>
+                        </div>
+                        <ul>
+                            <li><strong>Comcast DevOps Lead:</strong> Provided technical support to multiple developer groups</li>
+                            <li>Implemented <span class="highlight">Puppet for system state management</span> and Rundeck for automated deployments</li>
+                            <li>Integrated <span class="highlight">Jenkins with Rundeck</span> for automated deployments</li>
+                            <li>Used <span class="highlight">Splunk and Dynatrace</span> for diagnostics across hundreds of servers</li>
+                            <li>Built proof-of-concept <span class="highlight">ChatOps using Slack</span> for deployment triggers</li>
+                        </ul>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Senior Support Specialist/Systems Administrator</div>
+                                <div class="company">Saint Joseph's University, Philadelphia, PA</div>
+                            </div>
+                            <div class="duration">January 1999 - February 2011</div>
+                        </div>
+                        <ul>
+                            <li>Provided Tier III support for Windows, Linux, and macOS systems</li>
+                            <li><span class="highlight">VMware systems administration</span> - managed ESX/ESXi servers</li>
+                            <li>Deployed virtual lab environments and managed VM images</li>
+                            <li>SharePoint and MS Project server administration</li>
+                            <li>LANDesk Management Suite administration and Linux systems integration</li>
+                            <li><strong>Technical Services Manager (2000-2002):</strong> Managed 30+ student workers</li>
+                            <li><strong>Remedy Administrator (1999-2005):</strong> Maintained help desk systems and custom applications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Technology Expertise</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Cloud & Infrastructure</h3>
+                            <ul>
+                                <li>AWS (Terraform, EKS)</li>
+                                <li>Kubernetes</li>
+                                <li>VMware (ESX, vSphere)</li>
+                                <li>Infrastructure as Code</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>DevOps & Automation</h3>
+                            <ul>
+                                <li>CI/CD (GitLab, Jenkins)</li>
+                                <li>Configuration Management (Puppet, Chef)</li>
+                                <li>Containerization (Docker)</li>
+                                <li>Rundeck, Ansible</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Monitoring & Observability</h3>
+                            <ul>
+                                <li>Grafana, TICK Stack</li>
+                                <li>Splunk (Certified)</li>
+                                <li>Dynatrace</li>
+                                <li>Nagios</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Programming & Databases</h3>
+                            <ul>
+                                <li>Python, PHP</li>
+                                <li>MySQL, Oracle, MongoDB</li>
+                                <li>ActiveMQ</li>
+                                <li>.NET, SQL Server</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Operating Systems</h3>
+                            <ul>
+                                <li>Linux (Ubuntu, RHEL, Oracle)</li>
+                                <li>Windows Server (2003-2019)</li>
+                                <li>macOS, Sun Solaris</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Networking & Security</h3>
+                            <ul>
+                                <li>TCP/IP, DHCP, LDAP</li>
+                                <li>F5 Load Balancers</li>
+                                <li>WiFi (WEP, WPA)</li>
+                                <li>Security Assessments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Education</h2>
+                    <div class="education-item">
+                        <h3>Master of Science in Business Intelligence</h3>
+                        <p>Saint Joseph's University, Philadelphia, PA<br>
+                        <strong>Graduated:</strong> December 2008</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Bachelor of Science in Management & Information Systems</h3>
+                        <p>Saint Joseph's University, Philadelphia, PA<br>
+                        <strong>Graduated:</strong> December 1996</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Certifications & Achievements</h2>
+                    <div class="certifications">
+                        <span class="cert-badge">Oracle Linux Certified</span>
+                        <span class="cert-badge">Dell PowerEdge Certified</span>
+                        <span class="cert-badge">Splunk Certified</span>
+                        <span class="cert-badge">Alpha Iota Delta Honor Society</span>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Community Involvement</h2>
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Conference Organizer & Community Leader</div>
+                            </div>
+                        </div>
+                        <ul>
+                            <li><span class="highlight">Philly DevOpsDays Conference</span> organizer</li>
+                            <li><span class="highlight">Philly PUG</span> (Python User Group) project night host</li>
+                            <li>Former IT Manager at Prometheus Radio Project (volunteer work)</li>
+                            <li>Adjunct Instructor at Springfield College (2009-2012)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

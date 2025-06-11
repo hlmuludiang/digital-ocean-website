@@ -1,0 +1,20 @@
+[
+    {
+        "role":"Staff DevOps Engineer",
+        "company":"[Koalafi, Inc](https://koala.com)",
+        "summary":"Led in development of fast paced software teams.\n- list\n- of\n- things",
+        "range":"April 2021  - Present"
+    },
+    {
+        "role":"Senior DevOps Engineer",
+        "company":"[AWeber Communications, Inc](https://aweber.com)",
+        "summary":"Expedited the synergies of collaborative agile tooling.",
+        "range":"October 2017 - April 2021"
+    },
+    {
+        "role":"DevOps Engineering Consultant",
+        "company":"[Addteq, Inc.](https://addteq.com)",
+        "summary":"Technical lead for clients’ automation initiatives\n- Architected new environments\n- Deployment of Atlassian product line\n- Implemented CI/CD pipelines\n- Utilized Jmeter to perform load testing",
+        "range":" January 2017 - September 2018\n"
+    }
+]
